@@ -1,0 +1,18 @@
+# using this compose for common database
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: userone
+      POSTGRES_PASSWORD: passwordone
+      POSTGRES_DB: sample
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
